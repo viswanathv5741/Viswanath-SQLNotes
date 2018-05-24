@@ -13,13 +13,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "Contact2018_table";
     public static final String ID = "ID";
     public static final String COLUMN_NAME_CONTACT = "contact";
-    public static final String COLUMN_PHONE_CONTACT = "numbers";
+    public static final String COLUMN_PHONE_CONTACT = "phone";
     public static final String COLUMN_ADDRESS_CONTACT = "address";
     public static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + TABLE_NAME + " (" +
                     ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    COLUMN_NAME_CONTACT + " TEXT" +
-                    COLUMN_PHONE_CONTACT + " TEXT" +
+                    COLUMN_NAME_CONTACT + " TEXT," +
+                    COLUMN_PHONE_CONTACT + " TEXT," +
                     COLUMN_ADDRESS_CONTACT +
                     " TEXT)";
 
@@ -52,6 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValue.put(COLUMN_NAME_CONTACT, name);
         contentValue.put(COLUMN_PHONE_CONTACT, number);
         contentValue.put(COLUMN_ADDRESS_CONTACT, address);
+
         long result = db.insert(TABLE_NAME, null, contentValue);
         if (result == -1){
             Log.d("MyContactApp", "Databasehelper: contact insert - failed");
