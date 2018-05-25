@@ -21,8 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     COLUMN_NAME_CONTACT + " TEXT," +
                     COLUMN_PHONE_CONTACT + " TEXT," +
-                    COLUMN_ADDRESS_CONTACT +
-                    " TEXT)";
+                    COLUMN_ADDRESS_CONTACT + " TEXT)";
 
     public static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + TABLE_NAME;
