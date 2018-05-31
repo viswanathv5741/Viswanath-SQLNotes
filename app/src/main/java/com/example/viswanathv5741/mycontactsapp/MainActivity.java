@@ -95,7 +95,12 @@ public class MainActivity extends AppCompatActivity {
                 message.append("\n");
                 message.append("Address: ");
                 message.append(cursor.getString(3));
+                message.append ("\n");
+                message.append ("\n");
             }
+        }
+        if (message.length() == 0){
+            message.append("No contact found");
         }
         Intent intent = new Intent(this, SearchActivity.class);
         intent.putExtra(EXTRA_MESSAGE, message.toString());
